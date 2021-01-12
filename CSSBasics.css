@@ -1,0 +1,527 @@
+/* Welcome to the CSS Basics, covering most of CSS with help of this website!
+https://www.freecodecamp.org/learn, if you haven't checked out my HTML Basics
+one, check it out! It'll definetely help you understand this better! */
+
+/* This is how to make a comment in CSS!! Just use "/*" as the start of your
+comment then use it again but reverse like this */
+
+/* Now when it comes to CSS you can actually make the code in HTML but it would
+be inside the "<style>" element which would be located in the "<head>" but you
+can also type the code on a seperate file which would be known as the stylesheet
+and you would link it to your HTML in the "<head>" section, we'll be going over
+the regular code as if you were to write it in a stylesheet but this also
+applies to writing it in HTML, just make sure to locate it in the <head> section
+and nest the code inside the <style> elements */
+
+/* Here is an example of this with it being used in HTML known as internal CSS */
+/*
+  <head>
+    <style>
+      ...CSS code...
+    </style>
+  </head>
+*/
+
+/* Here is an example of connecting your stylesheet to the HTML */
+/*
+ <head>
+  <link rel="stylesheet" href="CSS-Basics/CSSBasics.css">
+ </head>
+ /* rel refers to the relationship with the HTML, in this case, it's the
+ stylesheet,the href specifies the location you of the CSS file you want to link
+ to, in this case scenario, I provided the folder name and file name, the reason
+ is, is because I don't have the HTML code and CSS code in the same folder, if I
+ did with the file being in the same directory, then I can just type the file
+ name which in this case would be CSSBasics.css */
+
+ /* Let's say we want to change the color of a text to blue (automatically black
+ if color of text is not specified) and that text is in a <p>
+ (this is known as the CSS Selector), (this could go for any text in a certain
+ element for example <h2>, <main>, etc.) we can do that by using the following
+ code below (note this is how CSS code is formed and all text in p elements
+ thorughout the HTML will turn blue, we'll get to more specification later)*/
+p {
+  color: blue;
+}
+
+/* CSS classes can be applied to HTML elements to provide more specification of
+certain elements to be altered through our CSS code, an element with a class
+would look like this:
+
+<p class="blue-text">Lorem Ipsum</p>
+
+As you can see above, the p tag is assigned the class called paragraph. Note
+that "classes" can be used with multiple elements effecting those certain
+elements, this comes third in line of importance with "important" and "id"
+having higher importance, I'll go over this in a bit. When making a CSS class
+declaration or basically making the code for that certain class, you would code
+it like this */
+.blue-text {
+  color: purple;
+}
+
+/* Want to change the font of a certain element's text? You can do this by using
+the "font-size" property, (px stands for pixels for example the font for the
+example below is 16 pixels) */
+h1 {
+  font-size: 16px;
+}
+
+/* Now let's make our fonts look less bland, we can do this by importing Google
+fonts! https://fonts.google.com/ has a ton of fonts you can choose from! Simply
+pick your font's from there and it'll give you the code needed, from there all
+you need to do is copy and paste it into the head of your HTML, then you can use
+that font in your CSS using the "font-family" to change the font to the specified
+font you imported. Here is an exmample of importing the Roboto Font
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+rel="stylesheet">
+
+Here is making h2 elements texts have the Roboto and Open Sans Font (note that
+family names are case sensitive and if there is a space in the name, you would
+need to quote it)
+*/
+h2 {
+  font-family: Roboto;
+}
+h3 {
+  font-family:"Open Sans";
+}
+
+/* Now what if the fonts you imported don't work? Well you can add a another
+font in which the element will degrade to just in case if the imported
+font won't work. These font's are usually monospace, serif, sans-serif, etc.
+which are fonts that are automatically available. These generic fonts are not
+case sensitive and they don't need quotes because they are CSS keywords. In this
+example, Lobster is the font but just in case the Lobster font isn't available,
+it will be degraded to sans-serif */
+h6 {
+  font-family: Lobster, sans-serif;
+}
+
+/* Let's say we have an image and we want to resize the width of it. We can do
+this by assigning the image a CSS class and then also using the CSS property
+"width" to change it
+
+<img class="small-image" src="https://imagelink" alt="image link">
+*/
+.small-image {
+  width: 16px;
+}
+
+/* Lets make our images look more jazzy by adding borders (this can also apply
+to other elements). CSS borders have properties like color, style, and width.
+Checking in, do you remember classes? Well you can make assign multiple classes
+to an element which can be done by seperating them by a space like below
+
+<p class="border bonkers">bonkers</p>
+
+The code below will make a solid blue 10px border on the element with the class
+border.
+*/
+.border {
+  border-color: blue;
+  border-style: solid;
+  border-width: 10px;
+}
+
+/* Now this border is really blocky having sharp corners, what if we want to
+have it more circular, removing the corners and making them bend, well, this can
+be done by using the "border-radius" property! Here is an example making the
+corners more round */
+.bonkers {
+  border-radius: 5px;
+}
+
+/* Not only can you use pixels(px) to specifiy border-radius, but you can also
+use percentages to specify border-radius! Here is an example with the class
+circle (50% will make the border & image circular)*/
+.circle {
+  border-radius: 50%;
+}
+
+/* Want to change the background color of your website? Well you can with this
+property "background-color", here is an example with the class
+website-background changing the background to silver. */
+.website-background {
+  background-color: silver;
+}
+
+/* HTML elements can have id's!The id of an element is unique and shouldn't be
+used on multiple elements but only on one. You'll learn later on that you can
+use ids to selecet and modify specific elements with Javascript! Here is an
+example of an HTML element with an id and a following id declaration in CSS (it
+uses # then the id name and id shows more importance than classes so if there's
+conflict between the class and the id of an element the class declaration for
+that element would be voided and the id declaration will show)
+
+<p id="para">Paragraph</p>
+
+*/
+#para {
+  color: green;
+}
+
+/* This section would be best if you looked at this diagram to help understand
+the concept, it would be best if you looked at this image
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fcodepen.io%2Fandrewgrant%2Fpost%2Fcss-margin-collapsing-explained&psig=AOvVaw18t2bxQibKu23bpAWs0eeJ&ust=1610233620038000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKiRmum5je4CFQAAAAAdAAAAABAY
+*/
+
+/* Now we'll be going over padding of an element. If you haven't noticed, most
+HTML elements are just rectangles. Padding is the distance between the content
+and its border. Imagine that you have a blue box and in the middle there's a
+text. The distance between the text and the side of the blue box is the padding
+Here is the code for that if we wanted to make the distance between the content
+and border 5 pixels */
+.blue-box {
+  padding: 5px;
+}
+
+/* Now we'll be going over the margin. Now this property goes over the amount of
+space between an elements borders and also the surrounding elements. So let's
+say that we want to make the margin of an element to 20px, this means that the
+elements borders are 20 pixels away from other elements. Here is how the code
+will look like */
+.red-box {
+  margin: 20px;
+}
+
+/* Adding a negative value to the margin will make the element grow larger,
+here's the lesson on FreeCodeCamp to visualize this better and below is the code
+https://www.freecodecamp.org/learn/responsive-web-design/basic-css/add-a-negative-margin-to-an-element
+*/
+.blue {
+  margin: -20px;
+}
+
+/* Now let's say we want to change the padding of the left side but keep the
+same padding for the right side of the element, well, we can change the left,
+right top, and bottom sides' paddings sepreately! */
+.paddingchanges {
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+/* Want to the change the margins differently? Well just like the example above,
+it's exactly the same, but instead of padding, it's margins that we're changing!
+*/
+.marginchanges {
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+/* Writing all of those properties can be a hassle if you want to change every
+side, well, there's a shortcut! You can do this by using the padding property
+and type down the distances in this order, top, right, bottom, left. Basically
+clockwise. This means the first value would be the padding for the top, the
+second value will be the padding for the right, and I think you get the rest
+from there, here is an example of how it would look like! */
+.padding-sides {
+  padding: 15px 10px 5px 20px;
+}
+
+ /* Same thing applies to margin! First value = top, second value = right,
+ third value = bottom, and fourth value = left. You'll be using the margin
+ property */
+ .marginsides {
+   margin: 15px 10px 5px 20px;
+ }
+
+ /* Now there are other ways selectors you can use other than id and class to
+ style an element. Another way you to style an element is by using this
+ attribute selector "[attr=value]". Let's say we want to style our radio buttons
+ to have specific margins, the attribute would be type and the value would be
+ radio. We know this because that's the attribute and value when we coded our
+ radio buttons. It would look like this */
+ [type="radio"] {
+   margin: 20px 10px 15px 5px;
+ }
+
+ /* There are other units out there than just pixels(px), absolute units like
+ "in" and "mm" refer to actual measurements, inches and millimeters. They
+ approximate these sizes on the computer screen and may vary depending on
+ resolution while relative units like "em" and "rem" are relative to another
+ length value. Em is based on the size of an element's font. If you use it to set
+ the font-size property itself, it's relative to the parent's font-size. */
+ .absoluteunits {
+   padding: 1in;
+   margin: 2mm;
+ }
+ .relativeunits {
+   padding: 2em;
+   margin: 2rem;
+ }
+
+ /* Let's style the body of the HTML and it does in fact exist, let's change the
+ background-color to blue */
+ body {
+   background-color: blue;
+ }
+
+ /* Now what's important to note is that any element nested inside the body will
+ be affected by the code. So let's say for example I have the font-family for
+ body to be monospace and I have a h1 element inside the body. That h1 elements
+ text will automatically be monospace because it's inside the body element!
+ Here's a link to better visualize it
+ https://www.freecodecamp.org/learn/responsive-web-design/basic-css/inherit-styles-from-the-body-element
+ */
+ body {
+   font-family: monospace
+ }
+ h1 {
+   color: green;
+ }
+
+ /* Now there will be conflict sometimes where for example you want your h1
+ element's text to be pink but the body element already makes all text color
+ green. Well CSS prioritizes more specific delcarations, body contains a lot of
+ elements but h1 is more specific, so the h1 declaration would be prioritized.
+ Meaning even though your body declaration says that all text color will be
+ green, you can make your h1 text color pink instead by making an h1 declaration.
+ */
+ body {
+   color: green;
+ }
+
+h1 {
+  color: pink;
+}
+
+/* Now when it comes to classes, we know that we can list as many classes as we
+want but the thing to note is that the last CSS declaration will be prioritized
+over the rest, take the following html code:
+
+<h1 class="blue-text pink-text">Hello World<h1>
+
+Take in note blue-text wil make the text blue and pink-text will make the text
+pink. The text will be pink and this is due to the pink-text CSS declaration
+coming last, look at the following code, this is the code for this to happen.*/
+.blue-text {
+  color: blue;
+}
+.pink-text {
+  color: pink;
+}
+
+/* Now you can override CSS class declarations by making an CSS id declaration.
+id shows more importance. Take for example the following html,
+
+<h1 id="heading" class="text">Hello World!</h1>
+
+by looking at the CSS declarations below, even though we have a CSS class
+declaration saying the h1 elements text will be pink, it'll instead by cyan
+because the CSS id declaration says the color will be cyan and the id declaration
+shows more importance */
+#heading {
+  color: cyan;
+}
+.text {
+  color: pink;
+}
+
+/* We can also override CSS id declarations as well with Inline styles! Inline
+styles are done inside the element with the attribute "style" and the value
+being the css property you want to use, below is an inline style!
+
+<p id="paragraph" class="text" style="color: pink;">Hello!</p>
+
+Let's say the id had a different color like blue, well that will be overidden
+because there's an inline style! Meaning instead of the text being blue, it will
+be instead pink */
+
+/* Now there's one last way to ovveride anything which is using the keyword
+"!important". YOu would want to override CSS just in case because later on you
+may be using CSS libraries which may override your own CSS accidentally, so When
+you want an element to have specific CSS, use this keyword right next to the
+value of the property like this! */
+.paragraph {
+  color: pink !important;
+}
+
+/* Hex Codes are another way to represent color in CSS. In hex code, hexadecimals
+are used which are 16 base numbers, 0-9 reprsent the values 0 through 9 and
+A-F represent the values 10-15. This gives us all together 16 values. 6
+hexadecimal digits are used to represent the colors, two digits for each color
+which are red, green, blue and in that order. The amount of color you want to
+put in has a range from 0 to 255. So how can we calculate the amount by the
+numbers that we're given to us, well take into note that each color has only two
+digits ranging from 0-F. You would first multiply the first digit by 16 then
+multiply the second digit by 1, then you would add those values together to get
+the actual value take for example the following hex code:
+
+#1F2D9A
+
+Red (1F):
+(1*16)+(15*1)
+value = 31
+
+Green (2D):
+(2*16)+(13*1)
+value = 45
+
+Blue (9A):
+(9*16)+(10*1)
+value = 154
+
+(This will give you a type of blue color)
+
+What's all black well here's the hex code color for that! */
+.black {
+  color: #000000;
+}
+
+/* You can make over 16 million colors using hex code which is insane!! Here are
+some hex codes for certain colors! */
+.dodger-blue {
+  color: #1E90FF;
+}
+.green {
+  color: #00FF00;
+}
+.orange {
+  color: #FFA500;
+}
+.red {
+  color: #FF0000;
+}
+
+/* Now 16 million colors is a lot so you can minimize your pallette by using
+abbreviated hex code! This limits to only 4,000 colors but hey that's still a lot
+to choose from haha! Take a look at the difference between the non-abbreviated
+hex code for red and look at the abbreviated hex code for it. There's also some
+other abbrviated hex code in there as well, make sure to read the classes so you
+don't get confused! */
+.non-abbreviated-red {
+  color: #FF0000;
+}
+.abbreviated-red {
+  color: #F00;
+}
+.cyan {
+  color: #0FF;
+}
+.green {
+  color: #0F0;
+}
+.fuchsia {
+  color: #F0F;
+}
+
+/* There's another way to represent colors in CSS which is by using "RGB" values.
+What this is is basically instead of having all those calculations using the
+hexadecimal system, you can instead actually just write down the values in the
+order of red, green, then blue between 0 to 255! Let's make our background of
+the body black, this is the code for it using "RGB" values! */
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+/* By choosing the values for either red green and blue, you're essentially
+mixing the colors, think about it as like I'm going to add a little bit of red
+but a lot of green and blue in that sense when it comes to inputting the values,
+here are some examples of colors, remember to read the class so you know which
+color is which! */
+.blue {
+  color: rgb(0, 0, 255);
+}
+.red {
+  color: rgb(255, 0, 0);
+}
+.orchid {
+  color: rgb(218, 112, 214);
+}
+.Sienna {
+  color: rgb(160, 82, 45);
+}
+
+/* CSS variables are a powerful way to change many CSS style properties at once
+by changing one value. To make one, you'll need to give it a name and with two
+hyphens in-front of it giving it a value. It will need to be within a CSS
+declration but you can in a sense make the the central hub of where you want to
+change things  For example, if let's make our CSS variable give the value of
+gray */
+.whole {
+  --color: gray;
+}
+
+/* Now you can assign these varialbes to certain properties depending on the
+value. For example the CSS variable written above will make the value to the
+property it was listed on gray. So this would only apply to properties that have
+values in colors. In an example let's say we know we want two elements to have
+the same color but we might want to change it later this is where the CSS
+variables come in handy. To assign a CSS variable you would need to use the "var()"
+value and inside the parentheses put in the name of the variable! Here's how to
+assign CSS variables to an declaration! */
+.wall {
+  background-color: var(--color);
+}
+.tools {
+  color: var(--color)
+}
+
+/* What if the CSS variable is invalid!? Well, you can add a fallback value! just
+in case the variable isn't working, add a comma after the variable in the
+parentheses, and put down the value like below! */
+.wall {
+  background-color: var(--color, gray);
+}
+
+/* Now browsers may sometimes not accept CSS variables like Internet Explorer or
+other browsers may not accept certain CSS code so it's important to have browser
+fallbacks. We gave our background property a CSS variable but we also want to
+add another background property before that listing the color just in case if the
+browser is too old! Below is an example (to clarify, though you will have two
+of the Sameproperties, the later declration in the cascade will be used in newer
+broswers ) */
+.graybox {
+  background-color: gray;
+  background-color: var(--color);
+}
+
+/* Now ":root" is a pseudo-class selector which represents the root element in
+the HTML which would most likely be "<html>" but the specifity/importance is
+higher than if you were to use the actual selector like html. By placing your
+variables in the ":root" they will be available globally and can be accessed
+from any other selector in the style sheet */
+:root {
+  --variable1: gray;
+  --variable2: blue;
+}
+
+/* By creating variables in the ":root" they will set the value of that variable
+for the whole page but these can be overwritten by setting them again within a
+specific element. For example, let's say the variable in the root makes a
+specific property's value pink but you want to make it blue, you can do this by
+writing the variable again but in that specific element where the property you
+want to change is located, below is an example */
+:root {
+  --variable1: gray;
+  --variable2: pink;
+}
+
+p {
+  --variable2: blue;
+  color: var(--variable2);
+}
+
+/* Media queries are used to check width and height of the viewport, width and
+height of the device, orientation, and resolution. These are popular to make a
+tailored stylesheet to desktops, tablets, phones, etc. We can use a media query
+to change a variable, the following code below says, generally the variable will
+give a value of blue but when the screen width is 200px or less, the variable
+will be pink */
+:root {
+  --variable1: pink;
+}
+@media (max-width: 200px) {
+  :root {
+      --variable: pink;
+  }
+
+/* This marks the end for the CSS Basics, watch out for the upcoming ones going
+deeper into CSS */
